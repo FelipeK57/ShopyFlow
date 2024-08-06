@@ -13,13 +13,13 @@ const InputForm = ({ type, placeholder, textColor }) => {
       <p className={textColor}>{placeholder}</p>
       <div className="flex items-center justify-end" >
         <input
-          className="bg-[#FFFFF] rounded-md p-3 shadow-md w-full"
+          className="bg-[#FFFFF] rounded-md p-3 shadow-lg w-full focus:outline-none focus:ring-2 ring-slate-400"
           type={type === "password" && showPassword ? "text" : type}
           required
           placeholder={placeholder}
         />
         {type === "password" && (
-          <button className="absolute p-2 opacity-80" type="submit" onClick={changePasswordVisibility}>
+          <button className="absolute p-2 opacity-70 mr-3 rounded-md hover:bg-slate-200 transition-all duration-200 focus:outline-none focus:ring-2 ring-slate-400"  type="submit" onClick={changePasswordVisibility}>
             {showPassword ? "Ocultar" : "Mostrar"}
           </button>
         )}
