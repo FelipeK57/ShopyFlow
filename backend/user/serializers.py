@@ -13,6 +13,4 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = '__all__'
 
-    def create(self, validated_data):
-        user = User.objects.create_user(**validated_data)
-        return user
+    
