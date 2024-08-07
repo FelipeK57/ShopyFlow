@@ -9,35 +9,59 @@ import LoginAdministrator from "./pages/Admin/LoginAdministrator.jsx";
 import Profile from "./pages/Clients/Profile/Profile.jsx";
 import Home from "./pages/Clients/Home.jsx";
 import HomeAdmin from "./pages/Admin/HomeAdmin.jsx";
+import Inventory from "./pages/Admin/components/Inventory.jsx";
+import Orders from "./pages/Admin/components/Orders.jsx";
+import Customers from "./pages/Admin/components/Customers.jsx";
+import Support from "./pages/Admin/components/Support.jsx";
 
 const router = createBrowserRouter([
   {
-    //Home
+    // Home
     path: "/",
     element: <Home />,
   },
   {
-    //Login clients
+    // Login clients
     path: "/login",
     element: <Login />,
   },
   {
-    //Register clients
+    // Register clients
     path: "/register",
     element: <Register />,
   },
   {
-    //Login administrators
+    // Login administrators
     path: "/login-user/administrator",
     element: <LoginAdministrator />,
   },
   {
-    //Home administrators
+    // Home administrators
     path: "/home-user/administrator",
     element: <HomeAdmin />,
+    // Routes for administrators
+    children: [
+      {
+        // Modules
+        path: "orders",
+        element: <Orders />,
+      },
+      {
+        path: "customers",
+        element: <Customers />,
+      },
+      {
+        path: "inventory",
+        element: <Inventory />,
+      },
+      {
+        path: "support",
+        element: <Support />,
+      },
+    ],
   },
   {
-    //Profile users
+    // Profile users
     path: "/profile",
     element: <Profile />,
   },

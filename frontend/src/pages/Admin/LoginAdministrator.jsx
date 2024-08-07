@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InputForm from "../../components/InputForm";
 import TextButton from "../../components/TextButton";
 
 function LoginAdmin() {
+  const navigate = useNavigate();
+
+  const login = () => {
+    navigate("/home-user/administrator/inventory");
+  };
+
   return (
     <main className="h-screen w-full items-center flex flex-col bg-[#F1F5F9]">
       {
@@ -36,7 +42,7 @@ function LoginAdmin() {
               type={"password"}
               placeholder={"Contraseña"}
             />
-            <TextButton text={"Continuar"} />
+            <TextButton func={login} type={"button"} text={"Continuar"} />
             <hr className="w-[98%] mx-auto h-[2px] bg-slate-500" />
             <Link href={"/"} className="text-lg underline text-slate-700">
               Olvide mi contraseña
