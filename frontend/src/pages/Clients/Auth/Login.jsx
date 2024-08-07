@@ -4,16 +4,25 @@ import TextButton from "../../../components/TextButton";
 
 function Login() {
   return (
-    <main className="h-screen w-full flex flex-col bg-[#F1F5F9]">
-      <header className="flex items-center justify-center p-6">
+    <main className="h-screen w-full items-center flex flex-col bg-[#F1F5F9]">
+      {
+        //Header - Image Logo
+      }
+      <header className="flex w-full items-center justify-center p-4">
         <img src="../src/assets/LogoClaro.svg" alt="Logo" />
       </header>
-      <section className="grid grid-cols-1 lg:grid-cols-2 w-full p-4 mx-auto max-w-[100%] sm:max-w-[90%] md:max-w-[60%] lg:max-w-[90%] xl:max-w-[80%]">
-        <div className="hidden lg:flex items-center justify-center">
-          <img className="size-[85%]" src="../src/assets/imglogin.svg" alt="repartidor" />
-        </div>
-        <div className="flex flex-col bg-[#CBD5E1] bg-opacity-50 p-10 rounded-3xl items-center justify-center">
-          <div className="flex flex-col w-full gap-10 text-center">
+      {
+        // Section - Main container
+      }
+      <section className="w-full p-4 mx-auto sm:max-w-[65%] md:max-w-[55%] lg:max-w-[45%] xl:max-w-[35%]">
+        {
+          // Div - Form container
+        }
+        <div className="bg-[#CBD5E1] bg-opacity-50 my-auto p-10 rounded-3xl">
+          {
+            // Form
+          }
+          <form className="flex flex-col w-full gap-10 text-center">
             <h1 className="text-black font-bold text-3xl py-3">
               Inicio de sesión
             </h1>
@@ -37,7 +46,7 @@ function Login() {
                 Aún no tengo una cuenta
               </Link>
             </div>
-          </div>
+          </form>
         </div>
       </section>
     </main>

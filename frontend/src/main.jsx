@@ -6,27 +6,41 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./pages/Clients/Auth/Login.jsx";
 import Register from "./pages/Clients/Auth/Register.jsx";
 import LoginAdministrator from "./pages/Admin/LoginAdministrator.jsx";
+import Profile from "./pages/Clients/Profile/Profile.jsx";
+import Home from "./pages/Clients/Home.jsx";
+import HomeAdmin from "./pages/Admin/HomeAdmin.jsx";
 
 const router = createBrowserRouter([
   {
     //Home
     path: "/",
-    element: <h1>Hola</h1>,
+    element: <Home />,
   },
   {
     //Login clients
     path: "/login",
     element: <Login />,
   },
-  { //Register clients
+  {
+    //Register clients
     path: "/register",
     element: <Register />,
   },
   {
-    //Login adminstrators
+    //Login administrators
     path: "/login-user/administrator",
-    element: <LoginAdministrator/>
-  }
+    element: <LoginAdministrator />,
+  },
+  {
+    //Home administrators
+    path: "/home-user/administrator",
+    element: <HomeAdmin />,
+  },
+  {
+    //Profile users
+    path: "/profile",
+    element: <Profile />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
