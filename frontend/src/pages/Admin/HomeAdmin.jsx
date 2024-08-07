@@ -3,9 +3,9 @@ import Sidebar from "./components/Sidebar.jsx";
 
 function HomeAdmin() {
   return (
-    <main className="flex bg-[#212529]">
+    <main className="flex bg-gray-950">
       <Sidebar />
-      <div className="text-black bg-slate-300 w-screen ml-0 m-2 rounded p-4">
+      <div className="text-black bg-slate-50 w-screen ml-0 m-1 rounded p-4">
         <Outlet />
       </div>
     </main>

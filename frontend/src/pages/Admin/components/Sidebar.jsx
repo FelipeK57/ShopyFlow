@@ -1,9 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import Inventory from "./Inventory";
-import Support from "./Support";
-import Customers from "./Customers";
-import Orders from "./Orders";
-import Logo from "../../../assets/LogoOscuro.svg";
 const Sidebar = () => {
   const navigate = useNavigate();
   const modules = [
@@ -13,9 +8,9 @@ const Sidebar = () => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
+          strokeWidth={1}
           stroke="currentColor"
-          className="size-6"
+          className="size-5"
         >
           <path
             strokeLinecap="round"
@@ -33,9 +28,9 @@ const Sidebar = () => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
+          strokeWidth={1}
           stroke="currentColor"
-          className="size-6"
+          className="size-5"
         >
           <path
             strokeLinecap="round"
@@ -53,9 +48,9 @@ const Sidebar = () => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
+          strokeWidth={1}
           stroke="currentColor"
-          className="size-6"
+          className="size-5"
         >
           <path
             strokeLinecap="round"
@@ -73,9 +68,9 @@ const Sidebar = () => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
+          strokeWidth={1}
           stroke="currentColor"
-          className="size-6"
+          className="size-5"
         >
           <path
             strokeLinecap="round"
@@ -94,28 +89,48 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="flex flex-col w-48 h-screen bg-[#212529] bg-opacity-95 p-4 gap-10">
-      <div className="flex items-center justify-center py-2">
-        <img src={Logo} alt="logo" />
+    <aside className="flex flex-col w-52 h-screen bg-gray-950 bg-opacity-95 p-2 gap-10">
+      <div className="p-2">
+        <h2 className="text-slate-300 font-semibold text-2xl">
+          <span className="font-bold text-white">ShopyFlow.</span> Dashboard
+        </h2>
       </div>
       <div className="flex flex-col gap-2">
         {modules.map((module) => (
           <Link
             key={module.path}
             to={`/home-user/administrator/${module.path}`}
-            className="flex gap-2 items-center hover:bg-gray-700 hover:bg-opacity-50 p-2 transition-all rounded-lg text-white font-bold focus:bg-gray-700 focus:bg-opacity-50"
+            className="flex gap-2 items-center hover:bg-slate-600 text-slate-300 hover:bg-opacity-20 hover:text-white p-2 transition-all duration-200 rounded focus:bg-slate-600 focus:bg-opacity-20 focus:text-white"
           >
-          {module.icon} {module.name}
+            {module.icon} {module.name}
           </Link>
         ))}
       </div>
-      <div className="grow flex items-end">
-        <button
-          onClick={logout}
-          className="bg-red-600 text-white text-sm rounded-md p-2 font-semibold w-full shadow-lg focus:ring-2 focus:ring-red-500 focus:outline-0 hover:bg-red-700 transition-all duration-200"
-        >
-          Cerrar sesión
-        </button>
+      <div className="grow flex items-end p-2">
+        <div className="flex flex-row w-full justify-between">
+          <button>
+            <img className="rounded-full size-8" src="https://ui-avatars.com/api?name=Kevin+Bolaño" alt="" />
+          </button>
+          <button
+            onClick={logout}
+            className="bg-red-600 text-white text-sm rounded-full p-1 font-semibold shadow-lg focus:ring-2 focus:ring-red-500 focus:outline-0 hover:bg-red-700 transition-all duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </aside>
   );
