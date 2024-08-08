@@ -1,27 +1,7 @@
 import Switch from "./Switch";
+import PropTypes from "prop-types";
 
-const Table = () => {
-  const data = [
-    {
-      id: 1,
-      img: "https://mac-center.com/cdn/shop/files/MacBook_Pro_13_in_Space_Gray_PDP_Image_Position-1_MXLA_5395ce92-3d36-4483-a995-b6bb011179c0.jpg?v=1700304877&width=823",
-      name: "Product 1",
-      category: "Category 1",
-      quantity: 10,
-      price: 10.99,
-      state: true,
-    },
-    {
-      id: 2,
-      img: "https://mac-center.com/cdn/shop/files/MacBook_Pro_13_in_Space_Gray_PDP_Image_Position-1_MXLA_5395ce92-3d36-4483-a995-b6bb011179c0.jpg?v=1700304877&width=823",
-      name: "Product 2",
-      category: "Category 2",
-      quantity: 20,
-      price: 20.99,
-      state: false,
-    },
-  ];
-
+const Table = ({ colTable, data }) => {
   return (
     <div className="relative overflow-y-auto rounded-md p-2 shadow-md bg-white">
       <table className="w-full text-sm text-left text-black">
@@ -32,24 +12,11 @@ const Table = () => {
                 <input name="checkbox" type="checkbox" className="w-4 h-4" />
               </div>
             </th>
-            <th scope="col" className="px-6 py-3">
-              Info Producto
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Categoria
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Cantidad
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Precio
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Acción
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Estado
-            </th>
+            {colTable.map((item) => (
+              <th scope="col" className="px-6 py-3" key={item}>
+                {item}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -125,6 +92,11 @@ const Table = () => {
       </table>
     </div>
   );
+};
+
+Table.propTypes = {
+  colTable: PropTypes.array.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default Table;

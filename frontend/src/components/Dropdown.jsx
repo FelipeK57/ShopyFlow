@@ -29,7 +29,7 @@ const Dropdown = ({ data, name, defaultOption }) => {
     <div ref={dropdownRef} className="relative p-2">
       <p>{name}</p>
       <button
-        className="bg-gray-200 flex justify-between w-56 items-center text-black text-md rounded-xl p-2 shadow-lg focus:outline-none focus:ring-1 ring-gray-400 focus:bg-gray-300 hover:bg-gray-300 transition-all duration-200"
+        className="bg-gray-200 flex justify-between w-full items-center text-black rounded-xl p-2 shadow-lg focus:outline-none focus:ring-1 ring-gray-400 focus:bg-gray-300 hover:bg-gray-300 transition-all duration-200"
         onClick={toggle}
         aria-expanded={open}
       >

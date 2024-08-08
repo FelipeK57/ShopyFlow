@@ -4,7 +4,7 @@ const Search = () => {
       <input
       placeholder="Buscar..."
         type="text"
-        className="bg-gray-200 w-96 rounded-xl text-md p-2 shadow-lg focus:outline-none focus:ring-2 ring-slate-400"
+        className="bg-gray-200 w-full rounded-xl p-2 shadow-lg focus:outline-none focus:ring-2 ring-slate-400"
       />
       <button
         type="button"

@@ -33,20 +33,23 @@ const Filterbar = () => {
   ];
 
   return (
-    <div className="bg-white flex items-end shadow-md rounded-md p-2 gap-10">
-      <div className="flex">
-        <Dropdown
-          data={dataCategories}
-          defaultOption="Todas las categorias"
-          name="Categorias"
-        />
-        <Dropdown
-          data={dataStates}
-          defaultOption="Todos los estados"
-          name="Estado"
-        />
-      </div>
+    <div className="bg-white flex items-end shadow-md rounded-md py-2 gap-2">
+      <Dropdown
+        data={dataCategories}
+        defaultOption="Todas las categorias"
+        name="Categorias"
+      />
+      <Dropdown
+        data={dataStates}
+        defaultOption="Todos los estados"
+        name="Estado"
+      />
       <Search />
+      <div className="p-2">
+        <button className="p-2 bg-blue-600 text-white rounded-lg text-">
+          Agregar un nuevo producto
+        </button>
+      </div>
     </div>
   );
 };
