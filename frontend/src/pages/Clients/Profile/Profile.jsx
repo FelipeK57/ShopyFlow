@@ -1,7 +1,8 @@
 function Profile() {
   return (
     <main>
-      <div>Profile</div>
+      <div>Perfil</div>
+      <div>Administrador</div>
     </main>
   );
 }

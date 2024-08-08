@@ -5,7 +5,7 @@ function HomeAdmin() {
   return (
     <main className="flex bg-gray-950">
       <Sidebar />
-      <div className="text-black bg-slate-50 w-screen ml-0 m-1 rounded p-4">
+      <div className="text-black bg-slate-50 w-screen ml-0 m-1 rounded">
         <Outlet />
       </div>
     </main>
@@ -13,3 +13,4 @@ function HomeAdmin() {
 }
 
 export default HomeAdmin;
+  

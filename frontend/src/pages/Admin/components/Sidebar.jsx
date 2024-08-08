@@ -82,6 +82,26 @@ const Sidebar = () => {
       name: "Soporte",
       path: "support",
     },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1}
+          stroke="currentColor"
+          className="size-5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+          />
+        </svg>
+      ),
+      name: "Perfil",
+      path: "profile",
+    },
   ];
 
   const logout = () => {
@@ -107,30 +127,27 @@ const Sidebar = () => {
         ))}
       </div>
       <div className="grow flex items-end p-2">
-        <div className="flex flex-row w-full justify-between">
-          <button>
-            <img className="rounded-full size-8" src="https://ui-avatars.com/api?name=Kevin+Bolaño" alt="" />
-          </button>
-          <button
-            onClick={logout}
-            className="bg-red-600 text-white text-sm rounded-full p-1 font-semibold shadow-lg focus:ring-2 focus:ring-red-500 focus:outline-0 hover:bg-red-700 transition-all duration-200"
+        <Link
+          to="/login-user/administrator"
+          onClick={logout}
+          className="bg-slate-600 flex items-center text-white text-sm rounded w-full justify-center p-1 font-semibold shadow-lg focus:ring-2 focus:ring-red-500 focus:outline-0 hover:bg-red-700 transition-all duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+            />
+          </svg>
+          Cerrar Sesión
+        </Link>
       </div>
     </aside>
   );

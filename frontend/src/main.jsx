@@ -58,12 +58,11 @@ const router = createBrowserRouter([
         path: "support",
         element: <Support />,
       },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
     ],
-  },
-  {
-    // Profile users
-    path: "/profile",
-    element: <Profile />,
   },
 ]);
 
