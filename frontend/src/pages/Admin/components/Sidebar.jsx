@@ -1,4 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Cookies from "js-cookie";
 const Sidebar = () => {
   const navigate = useNavigate();
   const modules = [
@@ -104,8 +106,16 @@ const Sidebar = () => {
     },
   ];
 
-  const logout = () => {
-    navigate("/login-user/administrator");
+  const logout = async () => {
+    try {
+      const response = await axios.post("http://localhost:8000/logout/", {
+        token: Cookies.get("sessionId"),
+      })
+      Cookies.remove("sessionId");
+      navigate("/login-user/administrator");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

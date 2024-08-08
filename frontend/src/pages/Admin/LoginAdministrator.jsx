@@ -1,12 +1,35 @@
 import { Link, useNavigate } from "react-router-dom";
 import InputForm from "../../components/InputForm";
 import TextButton from "../../components/TextButton";
+import axios from "axios";
+import { useState } from "react";
+import Cookies from "js-cookie";
 
 function LoginAdmin() {
   const navigate = useNavigate();
 
-  const login = () => {
-    navigate("/home-user/administrator/inventory");
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleIdChange = (event) => {
+    setId(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const login = async () => {
+    try {
+      const response = await axios.post("http://localhost:8000/admons/", {
+        code: id,
+        password: password,
+      });
+      Cookies.set("sessionId", response.data.sessionId);
+      navigate("/home-user/administrator/inventory");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -34,13 +57,17 @@ function LoginAdmin() {
             </h1>
             <InputForm
               textColor="text-black"
-              type={"email"}
-              placeholder={"Email"}
+              type={"number"}
+              placeholder={"Codigo"}
+              handle={handleIdChange}
+              value={id}
             />
             <InputForm
               textColor="text-black"
               type={"password"}
               placeholder={"Contraseña"}
+              handle={handlePasswordChange}
+              value={password}
             />
             <TextButton func={login} type={"button"} text={"Continuar"} />
             <hr className="w-[98%] mx-auto h-[2px] bg-slate-500" />
